@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Branching Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .code {
+            background: #f4f4f4;
+            border-left: 4px solid #333;
+            padding: 10px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Git Branching Guide</h1>
+    </header>
+    <div class="container">
+        <h2>What is a Branch?</h2>
+        <p>A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in
+            Git is <code>master</code>. As you start making commits, you're given a <code>master</code> branch that
+            points to the last commit you made. Every time you commit, it moves forward automatically.</p>
+
+        <h2>Creating a New Branch</h2>
+        <p>To create a new branch, you can use the following command:</p>
+        <div class="code">
+            <code>git branch new-branch-name</code>
+        </div>
+
+        <h2>Switching Branches</h2>
+        <p>To switch to an existing branch, you can use the following command:</p>
+        <div class="code">
+            <code>git checkout branch-name</code>
+        </div>
+
+        <h2>Creating and Switching to a New Branch</h2>
+        <p>You can create and switch to a new branch in one command:</p>
+        <div class="code">
+            <code>git checkout -b new-branch-name</code>
+        </div>
+
+        <h2>Merging Branches</h2>
+        <p>To merge a branch into your current branch, you can use the following command:</p>
+        <div class="code">
+            <code>git merge branch-name</code>
+        </div>
+
+        <h2>Deleting a Branch</h2>
+        <p>To delete a branch, you can use the following command:</p>
+        <div class="code">
+            <code>git branch -d branch-name</code>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Git Branching Guide</p>
+    </footer>
+</body>
+
+</html>
