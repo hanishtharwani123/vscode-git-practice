@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & VS Code Learning Guide</title>
+    <style>
+        :root {
+            --primary-color: #2ea44f;
+            --secondary-color: #24292e;
+            --accent-color: #0366d6;
+            --bg-color: #f6f8fa;
+            --text-color: #24292e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .step {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-left: 4px solid var(--primary-color);
+            background-color: var(--bg-color);
+        }
+
+        .command {
+            background-color: #1b1f23;
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 1rem 0;
+        }
+
+        .tip {
+            background-color: #f1f8ff;
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .workflow-diagram {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #2c974b;
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Git & VS Code Learning Guide</h1>
+        <p>A comprehensive guide to mastering version control with Git and VS Code</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>🚀 Getting Started</h2>
+            <div class="step">
+                <h3>1. Repository Setup</h3>
+                <p>Create a new repository on GitHub without initializing README, then:</p>
+                <div class="command">
+                    git init<br>
+                    git add .<br>
+                    git commit -m "Initial commit"<br>
+                    git branch -M main<br>
+                    git remote add origin [repository-url]<br>
+                    git push -u origin main
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🌿 Working with Branches</h2>
+            <div class="step">
+                <h3>Creating and Switching Branches</h3>
+                <p>In VS Code:</p>
+                <ol>
+                    <li>Click the branch icon in the bottom left</li>
+                    <li>Select "+ Create new branch"</li>
+                    <li>Enter branch name (e.g., "feature/login")</li>
+                </ol>
+                <div class="command">
+                    git checkout -b feature/login<br>
+                    git push -u origin feature/login
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>💾 Making Changes</h2>
+            <div class="step">
+                <h3>Staging and Committing</h3>
+                <p>In VS Code:</p>
+                <ol>
+                    <li>Make your changes in the editor</li>
+                    <li>Open the Source Control panel (Ctrl+Shift+G)</li>
+                    <li>Click + to stage changes</li>
+                    <li>Enter commit message</li>
+                    <li>Click ✓ to commit</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>Pro Tip:</strong> Write meaningful commit messages that explain WHY the change was made, not
+                just WHAT was changed.
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🔄 Merging and Pull Requests</h2>
+            <div class="step">
+                <h3>Creating a Pull Request</h3>
+                <ol>
+                    <li>Push your changes to your feature branch</li>
+                    <li>Go to GitHub repository</li>
+                    <li>Click "Compare & pull request"</li>
+                    <li>Add description and reviewers</li>
+                    <li>Click "Create pull request"</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🛠️ Common VS Code Git Commands</h2>
+            <div class="workflow-diagram">
+                <pre>
+Working Directory → Staging Area → Local Repository → Remote Repository
+    (git add)       (git commit)      (git push)
+                </pre>
+            </div>
+            <div class="command">
+                git status # Check repository status<br>
+                git pull # Get latest changes<br>
+                git push # Push commits to remote<br>
+                git merge main # Merge main into current branch<br>
+                git log # View commit history
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📚 Additional Resources</h2>
+            <div class="resources">
+                <div class="resource-card">
+                    <h3>VS Code Git Integration</h3>
+                    <p>Learn more about VS Code's built-in Git features and shortcuts.</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Git Command Reference</h3>
+                    <p>Complete list of Git commands and their usage.</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Best Practices</h3>
+                    <p>Learn Git workflow best practices and conventions.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
